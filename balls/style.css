@@ -1,0 +1,75 @@
+#cashgrabmachine {
+
+ margin-left: auto;
+ margin-right: auto;
+ width: 30%;
+ padding: 1%;
+ border: 2px solid black;
+    
+}
+
+#collection {
+    
+ margin-left: auto;
+ margin-right: auto; 
+ width: 30%;
+ padding: 1%;
+ border: 2px solid black;
+    
+}
+
+input {
+ text-align: center;   
+}
+
+button {
+   cursor: pointer; 
+}
+
+#gain {
+  
+   color: #000;
+   text-decoration: none;
+   border: 2px solid black;
+   background: white;
+   padding: .1%;
+    
+}
+
+    #circle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+    }
+
+#gain:hover{
+  
+    color: #00f;
+    
+}
+
+#gain:active {
+    color: #fff;
+    background: black;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+   color: white;
+   background: black;
+}
