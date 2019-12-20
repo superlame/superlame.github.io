@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <title>gumball prototype 0.0.1</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   </head>
   <body>
   
-      <h1><a id="gain" href="#">Gain (+$1)</a><br>
+      <h1><a id="gain" class="btn btn-lg btn-success" href="#">Gain (+$1)</a><br>
           </h1>
       
-                <h1 id="money">Money: $0</h2>
+                <h2 id="money">Money: $0</h2>
 
       <div align="center" id="cashgrabmachine">
           
-          <h2 >Gumball Machine!</h2>
-          <button id="insert">Insert Coin (Cost: $10)</button>
+          <h2>*Gumball Machine*</h2>
+          <button class="btn btn-outline-dark" id="insert">Insert Coin (Cost: $10)</button><br><br>
           <h3 id="credit">Credit: 0</h3>
-          <button id="roll">Roll</button>
+          <button id="roll" class="btn btn-lg btn-block btn-secondary">Roll</button><br>
           <h4 id="result">Result: <div id="circle"></div></h4>
 
           
@@ -63,6 +65,9 @@
       </div>
       <script src="https://cdn.rawgit.com/erosson/swarm-numberformat/v0.4.0/dist/swarm-numberformat.min.js"></script>
       <script src="jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
       <script src="script.js"></script>
   </body>
 </html>
