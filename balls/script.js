@@ -15,6 +15,42 @@ $(document).ready(function(){
  
     var ctotal = 0;
     
+    function save(){
+    localStorage.setItem("money",JSON.stringify(money));
+    localStorage.setItem("credit",JSON.stringify(credit));
+    localStorage.setItem("balls",JSON.stringify(balls));
+    localStorage.setItem("ctotal",JSON.stringify(ctotal));
+
+    }
+    
+    function load(){
+        var money = JSON.parse(localStorage.getItem("money"));
+        var credit = JSON.parse(localStorage.getItem("credit"));
+        var balls = JSON.parse(localStorage.getItem("balls"));
+        var ctotal = JSON.parse(localStorage.getItem("ctotal"));
+
+        $("#collectiontotal").html(ctotal);
+        $("#money").html("Money: $" + numberformat.format(money));
+        $("#credit").html("Credit: " + numberformat.format(credit));
+
+      $("#redcount").html(balls.red);
+      $("#bluecount").html(balls.blue);
+      $("#yellowcount").html(balls.yellow);
+      $("#greencount").html(balls.green);
+      $("#purplecount").html(balls.purple);
+
+        
+    }
+        
+    $("#load").click(function(){
+        load()  
+    })
+    
+    $("#save").click(function(){
+     
+        save()
+    })
+    
     //CLICK TO GAIN MONEY
 $("#gain").click(function(){
     
