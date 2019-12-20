@@ -1,3 +1,7 @@
+body {
+ overflow: hidden;   
+}
+
 #cashgrabmachine {
 
  margin-left: auto;
@@ -13,8 +17,10 @@
  margin-left: auto;
  margin-right: auto; 
  width: 30%;
+ height: 35%;
  padding: 1%;
  border: 2px solid black;
+ overflow-y: scroll;
     
 }
 
@@ -26,8 +32,13 @@ button {
    cursor: pointer; 
 }
 
+#money {
+    float: left;
+    text-align: left;
+}
+
 #gain {
-  
+   float: left;
    color: #000;
    text-decoration: none;
    border: 2px solid black;
@@ -45,6 +56,62 @@ button {
       background: #fff;
       border: 1px solid black;
     }
+
+    #redcircle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+      background: red;
+    }
+
+    #bluecircle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+      background: blue;
+    }
+
+    #yellowcircle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+      background: yellow;
+    }
+
+    #greencircle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+      background: green;
+    }
+
+    #purplecircle {
+      width: 25px;
+      height: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #fff;
+      border: 1px solid black;
+      background: purple;
+    }
+
 
 #gain:hover{
   

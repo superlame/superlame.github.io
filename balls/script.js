@@ -9,17 +9,18 @@ $(document).ready(function(){
         blue: 0,
         yellow: 0,
         green: 0,
-        purple: 0
+        purple: 0,
         
     }
  
+    var ctotal = 0;
     
     //CLICK TO GAIN MONEY
 $("#gain").click(function(){
     
     money = money + 1;
     
- $("#money").html("$" + numberformat.format(money));
+ $("#money").html("Money: $" + numberformat.format(money));
     
 })
     
@@ -33,7 +34,7 @@ $("#insert").click(function(){
         money = money - 10;
         credit = credit + 1;
         
-         $("#money").html("$" + numberformat.format(money));
+ $("#money").html("Money: $" + numberformat.format(money));
          $("#credit").html("Credit: " + numberformat.format(credit));
     }
     
@@ -86,7 +87,11 @@ $("#roll").click(function(){
       }
       
       console.log(result)
-  
+        
+          var ctotal = numberformat.format(balls.red + balls.blue + balls.yellow + balls.green + balls.purple);
+      
+      $("#collectiontotal").html(ctotal);
+
       //UPDATE COLLECTION
       $("#redcount").html(balls.red);
       $("#bluecount").html(balls.blue);
@@ -94,8 +99,7 @@ $("#roll").click(function(){
       $("#greencount").html(balls.green);
       $("#purplecount").html(balls.purple);
 
-      
-      
+            
   }
     
 })

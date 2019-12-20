@@ -5,13 +5,13 @@
     <title>gumball prototype 0.0.1</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body align="center">
+  <body>
   
       <h1><a id="gain" href="#">Gain (+$1)</a><br>
-          <span id="money">$0</span>
           </h1>
       
-      
+                <h1 id="money">Money: $0</h2>
+
       <div align="center" id="cashgrabmachine">
           
           <h2 >Gumball Machine!</h2>
@@ -25,7 +25,7 @@
       
       <div id="collection">
           
-          <h2 align="center">Collection</h2>
+          <h2 align="center">Collection (Total: <span id="collectiontotal">0</span>)</h2>
           
           <table>
               <tr>
@@ -37,23 +37,23 @@
                   </th>
               </tr>
               <tr>
-                  <td>Red</td>
+                  <td><div id="redcircle"></div></td>
                   <td id="redcount">0</td>
               </tr>
               <tr>
-                  <td>Blue</td>
+                  <td><div id="bluecircle"></div></td>
                   <td id="bluecount">0</td>
               </tr>
               <tr>
-                  <td>Yellow</td>
+                  <td><div id="yellowcircle"></div></td>
                   <td id="yellowcount">0</td>
               </tr>
               <tr>
-                  <td>Green</td>
+                  <td><div id="greencircle"></div></td>
                   <td id="greencount">0</td>
               </tr>
               <tr>
-                  <td>Purple</td>
+                  <td><div id="purplecircle"></div></td>
                   <td id="purplecount">0</td>
               </tr>
               
