@@ -1,0 +1,76 @@
+/* the animation css this is very ugly and personaly think you should use pure javascript
+  rather than all this rubbish to handle each browser */
+
+span.clickedNumber {
+
+  font-family: arial;
+
+  position: absolute;
+  opacity:0;
+  /* the standard nobody seems to use */
+  animation: animationFrames ease-in 1s; /* animation is 0ne second easing in (getting faster)*/
+  animation-iteration-count: 1;   /* animation happens once */
+
+  /* chrome */
+  -webkit-animation: animationFrames ease-in 1s;
+  -webkit-animation-iteration-count: 1;
+
+  /* firefox */
+  -moz-animation: animationFrames ease-in 1s;
+  -moz-animation-iteration-count: 1;
+
+  /* that other browser */
+  -o-animation: animationFrames ease-in 1s;
+  -o-animation-iteration-count: 1;
+
+  /* IE */
+  -ms-animation: animationFrames ease-in 1s;
+  -ms-animation-iteration-count: 1;
+}
+
+/* the key frames one style for each browser  and the standard one for some one else*/
+@keyframes animationFrames{  /* the standard nobody seems to use */
+  0% {top:3rem; opacity:1;}  /* start 20 pixels down  and vissable */
+  100% {top:-197px; opacity:0;} /* move up to 217 pixels while fading out */
+}
+
+@-moz-keyframes animationFrames{  /* firefox */
+  0% {top:20px; opacity:1;}
+  100% {top:-197px; opacity:0;}
+}
+
+@-webkit-keyframes animationFrames { /* chrome */
+  0% {top:20px; opacity:1;}
+  100% {top:-197px; opacity:0;}
+}
+
+@-o-keyframes animationFrames {  /* that other one */
+  0% {top:20px; opacity:1;}
+  100% {top:-197px; opacity:0;}
+}
+
+@-ms-keyframes animationFrames { /* IE */
+  0% {top:20px; opacity:1;}
+  100% {top:-197px; opacity:0;}
+}
+
+
+/* style a div to centre on the screen */
+div.containingElement {
+  top: 15rem;
+  cursor: pointer;
+  /* this is to stop the mouse selecting the number when the user clicks as
+	 * even a small movement will cause content to be selected */
+	user-select: none;            /* standard css */
+   -moz-user-select: -moz-none;   /* firefox */
+   -khtml-user-select: none;      /* that other one */
+   -webkit-user-select: none;     /* chrome */
+   -ms-user-select: none;         /* IE */
+}
+
+/* the numbers starting style and used to force reflow and get css animations to restart */
+span.hiddenNumber {
+	position:absolute;  /* make its position float */
+
+	display:none;       /* make sure its not displayed */
+}
