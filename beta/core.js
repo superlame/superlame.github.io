@@ -6,7 +6,7 @@ $(function(){
     u: 0,
     x: 0,
     tick: 1000,
-    click: 10,
+    click: 1,
     max: 25,
     auto: 0
   }
