@@ -45,9 +45,9 @@ body {
   cursor: pointer;
 }
 
-#bottomright {
+#gambling {
   position: fixed;
-  bottom: 0;
+  top: 0;
   right: 0;
   width: 20rem;
   height: 28rem;
@@ -81,12 +81,18 @@ div {
   margin: 1rem;
 }
 
+th {
+ background: white;
+    color: black;
+}
+
+
 td,th,tr {
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 table {
-  width: 40%;
+  width: 100%;
 }
 
 th {
@@ -98,13 +104,24 @@ td {
   text-align: center;
 }
 
+#area {
+ background: lightgrey;
+ margin: 0 auto;
+ width: 40%;
+ height: 10rem;   
+ overflow-y: scroll;
+}
+
+
 .unlocked {
+  background: white;
+  color: black;
   cursor: pointer;
 }
 
 .unlocked:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .locked {
@@ -154,6 +171,20 @@ td {
 .full {
   color: red;
 }
+
+#settings {
+    text-decoration: none;   
+}
+
+#settings:hover {
+    text-decoration: underline dashed;
+
+}
+
+#settings:active {
+    color: orange;
+}
+
 
 #settingspane {
   user-select: none;

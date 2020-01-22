@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>[U]</title>
+    <title>[U] BETA</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
@@ -19,11 +19,11 @@
       <h3>X: <span id="x">0</span></h3>
     </div>
 <div align="center">
-    <button id="more" oncontextmenu="return false;">Acquire</button>
-    <h1 id="funds"><span id="count">0</span>/<span id="max">25</span></h1>
-    <h3>Per Second: <span id="auto">0</span></h3>
+    <!-- <button id="more" oncontextmenu="return false;">Acquire</button> -->
+    <h1 id="funds"><span id="count">0</span>/<span id="max">10</span></h1>
+    <h3>Per Second: <span id="auto">1</span></h3>
 </div>
-<div align="center">
+<div id="area">
 <table>
   <tr>
     <th id="ch1">Capacity<br><span hidden class="description"><i>Repairing vaults allows for extra storage of U to buy stronger upgrades.</i></th>
@@ -32,8 +32,8 @@
     <th id="sch" hidden>Schemes<br><span hidden class="description"><i>There are more ways to gain capital than creating your own.</i></span></th>
   </tr>
   <tr>
-    <td id="t1c" class="locked">Tier 1 (-25u)</td>
-    <td id="t1a" hidden class="locked">Tier 1 (-30u)</td>
+    <td id="t1c" class="locked">Tier 1 (-10u)</td>
+      <td id="t1a" hidden class="locked">Tier 1 (-<span id="t1acost">30</span>u)</td>
     <td id="t1m" hidden class="locked">Tier 1 (-250u)</td>
     <td id="t1s" hidden class="locked">Tier 1 (-150x)</td>
     </tr>
@@ -51,7 +51,7 @@
     <p hidden id="log1a" class="log-item">> Unlocked <b>Automation Tier 1</b></p>
     <p hidden id="log1c" class="log-item">>Unlocked <b>Capacity Tier 1</b></p>
   </div>
-  <div hidden align="center" id="bottomright">
+  <div hidden align="center" id="gambling">
     <h3>Space Gambling</h3>
     <input id="bet" style="width:4rem;" min="0" type="number" placeholder="Amount" onsubmit="return false;"></input> <button id="place-bet" class="cursorpointer">Place Bet</button>
     <h4>Bet: <span id="userbet">0</span></h4>
@@ -66,6 +66,7 @@
     <button id="withdraw" disabled>Withdraw</button>
   </div>
     <script src="jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/markmalek/Fixed-Header-Table/master/jquery.fixedheadertable.js"></script>
     <script src="core.js"></script>
   </body>
 </html>

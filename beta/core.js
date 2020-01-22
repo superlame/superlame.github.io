@@ -7,8 +7,8 @@ $(function(){
     x: 0,
     tick: 1000,
     click: 1,
-    max: 25,
-    auto: 0
+    max: 10,
+    auto: 1
   }
 
   var settings = {
@@ -17,7 +17,7 @@ $(function(){
 
   var t1a = {
     cost: 30,
-    check: false
+//    check: false
   }
 
   var t2a = {
@@ -26,7 +26,7 @@ $(function(){
   }
 
   var t1c = {
-    cost: 25,
+    cost: 10,
     check: false
   }
 
@@ -105,16 +105,22 @@ $(function(){
   //AUTOMATIC GENERATION
 
   setInterval(function(){
-    if (user.auto >= 1 && user.u+user.auto < user.max) {
+    if (user.max >= user.u+user.auto) {
       user.u += user.auto;
       update();
+    } else {
+      user.u += (user.max-user.u)   
+      update();
     }
+      
+
+      
   },user.tick)
 
   //UNLOCK THINGS
 
 function check() {
-  if (user.u >= t1a.cost && t1a.check === false) {
+  if (user.u >= t1a.cost) {
     $("#t1a").removeClass("locked");
     $("#t1a").addClass("unlocked");
   } else {
@@ -210,7 +216,7 @@ function check() {
     $(this).removeClass("unlocked")
     $(this).addClass("locked")
     $(this).html("PURCHASED")
-    $("#bottomright").fadeIn("fast");
+    $("#gambling").fadeIn("fast");
     update()
   }
   })
@@ -280,16 +286,18 @@ function check() {
 
 
   $("#t1a").click(function(){
-    if (user.u >= t1a.cost && t1a.check === false) {
-      t1a.check = true;
-      $(this).removeClass("unlocked")
-      $(this).addClass("locked")
-      $(this).html("PURCHASED")
-      $("#t2a").fadeIn()
+    if (user.u >= t1a.cost) {
+      //t1a.check = true;
+      //$(this).removeClass("unlocked")
+      //$(this).addClass("locked")
+      //$(this).html("PURCHASED")
+      //$("#t2a").fadeIn()
       user.u -= t1a.cost;
       user.auto += 1;
+      t1a.cost = Math.ceil(t1a.cost*1.2);
+      $("#t1acost").html(t1a.cost);
       check()
-      $("#log1a").fadeIn()
+      //$("#log1a").fadeIn()
       update()
     }
   })
