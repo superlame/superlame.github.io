@@ -1,76 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <title>gumball prototype 0.0.1</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <meta charset="utf-8">
+    <title>[U]</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-  
-      <h1><a id="gain" class="btn btn-lg btn-success" href="#">Gain (+$1)</a><br>
-         <!-- <h3><a href="#" id="save">Save</a></h3>
-          <h3><a href="#" id="load">Load</a></h3> -->
-</h1>
-      
-                <h2 id="money">Money: $0</h2><br>
-      
-
-      <div align="center" id="cashgrabmachine">
-          
-          <h2>*Gumball Machine*</h2>
-          <button class="btn btn-outline-dark" id="insert">Insert Coin (Cost: $10)</button><br><br>
-          <h3 id="credit">Credit: 0</h3>
-          <button id="roll" class="btn btn-lg btn-block btn-secondary">Roll</button><br>
-          <h4 id="result">Result: <div id="circle"></div></h4>
-
-          
-          </div><br>
-      
-      <div id="collection">
-          
-          <h2 align="center">Collection (Total: <span id="collectiontotal">0</span>)</h2>
-          
-          <table>
-              <tr>
-                  <th>
-                      Color:
-                  </th>
-                  <th>
-                      Count:
-                  </th>
-              </tr>
-              <tr>
-                  <td><div id="redcircle"></div></td>
-                  <td id="redcount">0</td>
-              </tr>
-              <tr>
-                  <td><div id="bluecircle"></div></td>
-                  <td id="bluecount">0</td>
-              </tr>
-              <tr>
-                  <td><div id="yellowcircle"></div></td>
-                  <td id="yellowcount">0</td>
-              </tr>
-              <tr>
-                  <td><div id="greencircle"></div></td>
-                  <td id="greencount">0</td>
-              </tr>
-              <tr>
-                  <td><div id="purplecircle"></div></td>
-                  <td id="purplecount">0</td>
-              </tr>
-              
-              
-          </table>
-          
-      </div>
-      <script src="https://cdn.rawgit.com/erosson/swarm-numberformat/v0.4.0/dist/swarm-numberformat.min.js"></script>
-      <script src="jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-      <script src="script.js"></script>
+    <a href="#" class="topleft" id="settings"><b>Settings</b></a>
+    <div hidden id="settingspane">
+      <p>Theme: <span class="option" id="theme">LIGHT</span></p>
+      <p>Font: <span class="option" id="font">DEFAULT</span></p>
+    </div>
+    <div hidden id="converter" align="center" class="bottomleft">
+      <h3>Matter Converter</h3>
+      <input id="converter-input" onsubmit="return false;" type="number" min="0" placeholder="Input (U)"> <button id="convert" class="cursorpointer">Convert</button>
+      <p style="color:blue">x = Math.ceil(u/5)</p>
+      <p>Output: <span id="xoutput">0</span></p>
+      <h3>X: <span id="x">0</span></h3>
+    </div>
+<div align="center">
+    <button id="more" oncontextmenu="return false;">Acquire</button>
+    <h1 id="funds"><span id="count">0</span>/<span id="max">25</span></h1>
+    <h3>Per Second: <span id="auto">0</span></h3>
+</div>
+<div align="center">
+<table>
+  <tr>
+    <th id="ch1">Capacity<br><span hidden class="description"><i>Repairing vaults allows for extra storage of U to buy stronger upgrades.</i></th>
+    <th id="ah1" hidden>Automation<br><span hidden class="description"><i>Repairing engines allows for effort-free production.</i></span></th>
+    <th id="mch" hidden>Machines<br><span hidden class="description"><i>Building Machines opens up a world of possibilities.</i></span>
+    <th id="sch" hidden>Schemes<br><span hidden class="description"><i>There are more ways to gain capital than creating your own.</i></span></th>
+  </tr>
+  <tr>
+    <td id="t1c" class="locked">Tier 1 (-25u)</td>
+    <td id="t1a" hidden class="locked">Tier 1 (-30u)</td>
+    <td id="t1m" hidden class="locked">Tier 1 (-250u)</td>
+    <td id="t1s" hidden class="locked">Tier 1 (-150x)</td>
+    </tr>
+    <tr>
+      <td id="t2c" hidden class="locked">Tier 2 (-50u)</td>
+      <td id="t2a" hidden class="locked">Tier 2 (-75u)</td>
+    </tr>
+    <tr>
+      <td id="t3c" hidden class="locked">Tier 3 (-450u)</td>
+    </tr>
+</table>
+  </div>
+  <div hidden id="bottomleft">
+    <p hidden id="log2a" class="log-item">> Unlocked <b>Automation Tier 2</b></p>
+    <p hidden id="log1a" class="log-item">> Unlocked <b>Automation Tier 1</b></p>
+    <p hidden id="log1c" class="log-item">>Unlocked <b>Capacity Tier 1</b></p>
+  </div>
+  <div hidden align="center" id="bottomright">
+    <h3>Space Gambling</h3>
+    <input id="bet" style="width:4rem;" min="0" type="number" placeholder="Amount" onsubmit="return false;"></input> <button id="place-bet" class="cursorpointer">Place Bet</button>
+    <h4>Bet: <span id="userbet">0</span></h4>
+    <hr>
+    <h4>Target <button id="roll" disabled>ROLL</button></h4>
+    <h2 id="target">?</h2>
+    <hr><br>
+    <button id="generate-seed" disabled>Generate Seed</button><br><span id="seed"></span>
+    <br><br>
+    <hr>
+    <h2 id="reward">???</h2>
+    <button id="withdraw" disabled>Withdraw</button>
+  </div>
+    <script src="jquery.min.js"></script>
+    <script src="core.js"></script>
   </body>
 </html>
