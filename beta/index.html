@@ -11,25 +11,25 @@
       <p>Theme: <span class="option" id="theme">LIGHT</span></p>
       <p>Font: <span class="option" id="font">DEFAULT</span></p>
     </div>
-    <div hidden id="converter" align="center" class="topright">
+    <div hidden id="converter" align="center" class="bottomleft">
       <h3>Matter Converter</h3>
-      <input id="converter-input" onsubmit="return false;" type="number" min="0" placeholder="Input (U)"> </input><button id="convert" class="cursorpointer">Convert</button>
+      <input id="converter-input" onsubmit="return false;" type="number" min="0" placeholder="Input (U)"> <button id="convert" class="cursorpointer">Convert</button>
       <p style="color:blue">x = Math.ceil(u/5)</p>
       <p>Output: <span id="xoutput">0</span></p>
       <h3>X: <span id="x">0</span></h3>
     </div>
 <div align="center">
-    <button id="more">Acquire</button>
+    <button id="more" oncontextmenu="return false;">Acquire</button>
     <h1 id="funds"><span id="count">0</span>/<span id="max">25</span></h1>
     <h3>Per Second: <span id="auto">0</span></h3>
 </div>
 <div align="center">
 <table>
   <tr>
-    <th id="ch1">Capacity<br><span class="description"><i>Repairing vaults allows for extra storage of U to buy stronger upgrades.</i></th>
-    <th id="ah1" hidden>Automation<br><span class="description"><i>Repairing engines allows for effort-free production.</i></span></th>
-    <th id="mch" hidden>Machines<br><span class="description"><i>Building Machines opens up a world of possibilities.</i></span>
-    <th id="sch" hidden>Schemes<br><span class="description"><i>There are more ways to gain capital than creating your own.</i></span></th>
+    <th id="ch1">Capacity<br><span hidden class="description"><i>Repairing vaults allows for extra storage of U to buy stronger upgrades.</i></th>
+    <th id="ah1" hidden>Automation<br><span hidden class="description"><i>Repairing engines allows for effort-free production.</i></span></th>
+    <th id="mch" hidden>Machines<br><span hidden class="description"><i>Building Machines opens up a world of possibilities.</i></span>
+    <th id="sch" hidden>Schemes<br><span hidden class="description"><i>There are more ways to gain capital than creating your own.</i></span></th>
   </tr>
   <tr>
     <td id="t1c" class="locked">Tier 1 (-25u)</td>
