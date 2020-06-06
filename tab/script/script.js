@@ -6,7 +6,7 @@ const Config = {
             "tech",
             [
                 ["/g/", "https://boards.4channel.org/g/"],
-                ["installgentoo", "https://wiki.installgento.com"],
+                ["installgentoo", "https://wiki.installgentoo.com"],
                 ["github", "https://github.com/"]
             ]
         ],
